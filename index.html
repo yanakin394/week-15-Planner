@@ -13,14 +13,17 @@
         <div class="task__wrapper">
             <form>
                 <label class="task-input__title">Добавить задачу</label>
-                <input class="task__input" type="text" style="width: 300px; height: 25px;">                
+                <input id="task_input" class="task__input" type="text" style="width: 300px; height: 25px;">                
             </form>
             <button class="task__add-button">Добавить</button>
         </div>
-        <div class="task-list__wrapper">
-            <p class="task-list__title">Список задач</p>
-            <div class="task-list"></div>
-            <button class="task-list__button">Очистить список задач</button>
+        <div class="task-list__wrapper">            
+            <div class="task-list__container">
+                <p class="task-list__title">Список задач</p>
+                <form class="task-list">
+                </form>
+            </div>
+            <button class="task-list__button" disabled="">Очистить список задач</button>
         </div>
     </div>
     <script src="script.js"></script>

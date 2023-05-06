@@ -29,7 +29,15 @@ form {
 }
 .task-list__button {
     margin-top: 15%;
-    margin-left: 10%;
+    margin-left: 20%;
     width: fit-content;
     height: 35px;
+}
+.label {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.task_added {
+    margin-left: 5%;
 }
