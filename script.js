@@ -27,6 +27,21 @@ addTaskButton.addEventListener('click', () => {
         getInput.value = '';
     }
     cleanInput();
+
+    //ЦИКЛ для проверки чекбоксов
+    /* const checkboxes = document.getElementById('checkbox');
+    const checkboxesArr = Array.from(checkboxes); */
+    function enableClearTasks () {
+        const checkboxes = document.getElementById('checkbox');
+        for (let i= 0; i < checkboxes.clientHeight; i++) {
+            checkboxes[i].addEventListener('change', function() {
+                if(checkboxes[i].checked) {
+                    clearTasks.removeAttribute("disabled");
+                }
+            })
+        }
+    }
+    enableClearTasks();
 })
 
 
@@ -34,7 +49,7 @@ addTaskButton.addEventListener('click', () => {
     clearTasks.disabled = !checkbox.checked;
 }) */
 
-function activeCleanButton () {
+/* function activeCleanButton () {
     const checkbox = document.getElementById('checkbox');
     checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
@@ -44,4 +59,4 @@ function activeCleanButton () {
         }
     })
 }
-activeCleanButton ();
+activeCleanButton (); */
