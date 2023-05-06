@@ -34,9 +34,14 @@ addTaskButton.addEventListener('click', () => {
     clearTasks.disabled = !checkbox.checked;
 }) */
 
-/* function activeCleanButton () {
-    if (document.getElementById('checkbox').checked) {
-        clearTasks.disabled;
-    }
+function activeCleanButton () {
+    const checkbox = document.getElementById('checkbox');
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+            clearTasks.disabled = false;
+        } else {
+            clearTasks.disabled = true;
+        }
+    })
 }
-activeCleanButton (); */
+activeCleanButton ();
