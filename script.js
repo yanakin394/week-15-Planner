@@ -5,6 +5,7 @@ const taskList = document.querySelector('.task-list');
 
 // Добавляю обработчик событий для добавления задач в список после нажатия кнопки Добавить
 addTaskButton.addEventListener('click', () => {    
+     
 
     // задаю переменную для получения данных, введенных пользователем
     let task = document.getElementById('task_input').value;
@@ -21,17 +22,20 @@ addTaskButton.addEventListener('click', () => {
         </label>`;
     taskList.appendChild(divContainer);
 
+    // проверка на пустой инпут
+    if (getInput.length === 0) { 
+        divContainer.innerHTML = '';
+    }
+    
     // создаю функцию, чтобы инпут был пустым после нажатия кнопки
-    /* const cleanInput = () => { */
     const getInput = document.getElementById('task_input');
     getInput.value = '';
-   /*  } */
-    /* cleanInput(); */
 
     //активизация кнопки Очистки задач
     if(clearTasks.disabled == true) {
         clearTasks.disabled == false
     }    
+
 });
 
 // обработчик событий для кнопки Очищения задач
