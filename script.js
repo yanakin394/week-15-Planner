@@ -2,6 +2,8 @@
 const addTaskButton = document.querySelector('.task__add-button');
 const clearTasks = document.querySelector('.task-list__button');
 const taskList = document.querySelector('.task-list');
+const taskInput = document.getElementById('task_input');
+const getInput = document.getElementById('task_input');
 
 // Добавляю обработчик событий для добавления задач в список после нажатия кнопки Добавить
 addTaskButton.addEventListener('click', () => {        
@@ -13,22 +15,20 @@ addTaskButton.addEventListener('click', () => {
     divContainer.classList.add("list__container");
 
     // добавляю задачу, введенную пользователем, в список
-    divContainer.innerHTML = `                                 
+    if (getInput.value.length > 0) {
+        divContainer.innerHTML = `                                 
         <label class="label">            
             <input type="checkbox" id="checkbox" disabled>
             <span class="task_added">${task}<\span>
         </label>`;
     taskList.appendChild(divContainer);
+    } else if (getInput.value === '') {
+        alert('Введите задачу!');
+    }
 
-/*         // проверка на пустой инпут
-        if (getInput.length === 0) { 
-            taskList.innerHTML = '';
-        }  */
-
-    // создаю функцию, чтобы инпут был пустым после нажатия кнопки
-    const getInput = document.getElementById('task_input');
+    //очищаю инпут после ввода
     getInput.value = '';
-
+ 
     //активизация кнопки Очистки задач  НЕ РАБОТАЕТ
     if(clearTasks.disabled == true) {
         clearTasks.disabled = false
